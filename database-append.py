@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # Witten by Abhiram Shibu (Team Destroyer), contibuted by so many contributers ( Abin Shoby, Abhijith N Raj, Etc )
 # Licensed under GPL v2.0
+import os
 file= __file__
 def help0():                                                                                                 # User help function declaration
 	print("This program is designed to insert a particular virus file into the database")
@@ -25,10 +26,18 @@ if (j>1):                                                                       
 else:                                                                                                        # Checking if no argument specified
 	print("You have not given any arguments, try "+file+" -h for more details")
 if (c==1):                                                                                                   # Append changes to db if changes present
-	targetextract=open(fname,"rb").read()                                                                # Read the target file
-	targetextract=targetextract.split("\n")                                                              # Removing next line
-	targetextract="".join(targetextract)                                                                 # Joining the list with a null string
-	targethex=bintohex.hexlify(targetextract)                                                            # Converting to hex and storing
-	target_append_line=virname+"\t\t\t\t"+targethex                                                      # Making append line in appropreate way
+	command="file -b "+fname
+	linux_open=os.popen(command).read()
+	if(linux_open.find("txt")==-1):
+		targetextract=open(fname,"rb").read()                                                                # Read the target file
+#		targetextract=targetextract.split("\n")                                                              # Removing next line
+#		targetextract="".join(targetextract)                                                                 # Joining the list with a null string
+		targethex=bintohex.hexlify(targetextract)                                                            # Converting to hex and storing
+	else:
+		targetextract=open(fname,"r").read()                                                                # Read the target file
+		targetextract=targetextract.split("\n")                                                              # Removing next line
+		targetextract="".join(targetextract)                                                                 # Joining the list with a null string
+		targethex=bintohex.hexlify(targetextract)                                                            # Converting to hex and storing
+	target_append_line="\n"+virname+"\t\t\t\t"+targethex.decode("utf-8")                                                      # Making append line in appropreate way
 	f.write(target_append_line)                                                                          # Writing changes to db
 f.close()                                                                                                    # Closing db
