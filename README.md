@@ -1,12 +1,12 @@
-# virusDestroyer
+# virusDefender
 
 This is a college project written in python language to create a python based antivirus.
 
 ----------------How to test-----------------------
 
-1) git clone https://github.com/ABHIRAMSHIBU/virusDestroyer.git -b master
+1) git clone https://github.com/ABHIRAMSHIBU/virusDefender.git -b master
 
-2) cd virusDestroyer
+2) cd virusDefender
 
 3) chmod +x *
 
