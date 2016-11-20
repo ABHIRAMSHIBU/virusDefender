@@ -1,8 +1,9 @@
 #!/usr/bin/python2
+#NO T.I.M.E so breief commending
 #convert binary to hex
-import glob
-import binascii
-def scan_abandoned(f1,f2):
+import glob                # useless, for developer purpose
+import binascii            # u know it , hex - dec - ascii - bin
+def scan_abandoned(f1,f2):       # abandoned no need to know
 	found=0
 	count=0
 	for i in range(len(f1)):
@@ -30,22 +31,22 @@ def scan_abandoned(f1,f2):
 				print "Infected Be scared! BOOM!"
 				found=1
 				break
-def scan(f1,f2):
-	found=0
-	count=0
+def scan(f1,f2):                          # New can definition
+	found=0                           # flag as found
+	count=0                           # To keep track of counter
 	f=[]
-	f2="".join(f2)
-	f1="".join(f1)
-	index=f2.find(f1)
-	if index!=-1:
-		print "WoW Infected!."
-	else :
-		print "Im disappointed its free from virus."
-def split(a,b):
-	f1=[]
-	f2=[]
-	for i in a:
-        	f1.append(i)
+	f2="".join(f2)                    # List -> string
+	f1="".join(f1)                    # Same again
+	index=f2.find(f1)                 # Finding the signature
+	if index!=-1:                     # Checking if infected!
+		print "WoW Infected!."    # alert user
+	else :                            # if not infected
+		print "Im disappointed its free from virus." # you know it
+def split(a,b):                           # Split function, string -> list
+	f1=[]                             # Initialize empty variable as a list
+	f2=[]                             # Initialze again 
+	for i in a:                       
+        	f1.append(i)              # Append into f1
 	for i in b:
         	f2.append(i)
 	#print "F1 \n",f1
@@ -53,7 +54,7 @@ def split(a,b):
 	return f1,f2
 
 def binhex():
-	fvirus=open("signature.py","rb").read()#open virus database sample
+	fvirus=open("databases","rb").readline()#open virus database sample
 	frand=open(raw_input("Enter the name of the file to compare :"),"rb").read()# open any file
 	fvirus=fvirus.split("\n")#remove newline
 	fvirus="".join(fvirus)
