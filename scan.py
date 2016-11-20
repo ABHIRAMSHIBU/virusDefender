@@ -2,6 +2,7 @@
 #convert binary to hex
 import glob
 import binascii
+import retfind
 def scan_abandoned(f1,f2):
 	found=0
 	count=0
@@ -69,3 +70,5 @@ f1,f2=binhex()
 #print "F1 \n",f1                    # Uncommend for debugging
 #print "F2 \n",f2                    # Uncommend for debugging
 scan(f1,f2)
+retfind.retfind()
+print retfind.f1
