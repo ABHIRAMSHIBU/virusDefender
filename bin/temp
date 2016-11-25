@@ -34,9 +34,3 @@ def compare():
 #   else:
 #        print"safezone"
 compare()
-
-    
-
-
-    
-    
