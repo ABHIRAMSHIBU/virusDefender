@@ -1,6 +1,7 @@
 # virusDefender
 
 This is a college project written in python language to create a python based antivirus.
+_Python ONLY ANTIVIRUS_
 
 ----------------How to test-----------------------
 
