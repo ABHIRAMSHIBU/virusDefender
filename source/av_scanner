@@ -3,6 +3,7 @@
 import glob                # useless, for developer purpose
 import binascii            # u know it , hex - dec - ascii - bin
 import os                  # To use some os functions
+from colors import *
 
 def scan(f1,f2):                          # New can definition
 	found=0                           # flag as found
@@ -66,7 +67,7 @@ try :
 		if z=='!-2' :
 			break
 		elif z=='!-3' :
-			print "Database not found! Please run update.py"
+			print red+"ERROR:"+blue+"Database not found! Please run update.py"+nocol
 		else :	
 			z=z.split('!0x1ebf')	
 			f1,f2=binhex(z[1],frand)
@@ -75,12 +76,12 @@ try :
 			scan(f1,f2)
 		i=i+1
 except KeyboardInterrupt :
-	print "\nKeyboard Interrupt detected."
-	print "Program Terminated"
+	print blue+"\nKeyboard Interrupt detected."
+	print red+"Program Terminated"+nocol
 except IOError :
-	print "File not found."
+	print red+"ERROR:"+nocol+"File not found."
 except :
-	print "Fatal: Your installtion of this antivirus is corrupt, cant find required protocols and instructions."
+	print red+"Fatal: Your installtion of this antivirus is corrupt, cant find required protocols and instructions."+nocol
 	
 #import io
 #f=io.FileIO("cleancode.txt","w")
