@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 #convert binary to hex
 import glob                # useless, for developer purpose
-import binascii            # u know it , hex - dec - ascii - bin
+#import binascii            # u know it , hex - dec - ascii - bin
 import os                  # To use some os functions
 
 def scan(f1,f2):                          # New can definition
@@ -11,10 +11,11 @@ def scan(f1,f2):                          # New can definition
 	f2="".join(f2)                    # List -> string
 	f1="".join(f1)                    # Same again
 	index=f2.find(f1)                 # Finding the signature
+	print f1
 	if f1 in f2:                     # Checking if infected!
-		print "This file is infected with, "+z[0]+" virus!"    # alert user
+		print "WoW Infected!."    # alert user
 	else :                            # if not infected
-		print "This file is safe, no virus found in our database." # you know it
+		print "Im disappointed its free from virus." # you know it
 
 
 
@@ -37,8 +38,8 @@ def binhex(fvirus,frand):
 #	fvirus="".join(fvirus)
 	frand=frand.split("\n")#""
 	frand="".join(frand)
-	fvirus=binascii.hexlify(fvirus)#convert binary to hex
-	frand=binascii.hexlify(frand)#" "   
+#	fvirus=binascii.hexlify(fvirus)#convert binary to hex
+#	frand=binascii.hexlify(frand)#" "   
 	#print"virus sample",fvirus
 	#print"file:",frand
 	return(split(fvirus,frand))

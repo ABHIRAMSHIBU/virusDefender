@@ -29,7 +29,7 @@ else :
 			if z=="":
 				print "!-2"
 			else :
-				print z[:-1]
+				print z[:-1],
 	else :
 		print "!-3"
 	f.close()
