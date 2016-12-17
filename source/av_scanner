@@ -77,7 +77,8 @@ try :
 		i=i+1
 except KeyboardInterrupt :
 	print blue+"\nKeyboard Interrupt detected."
-	print red+"Program Terminated"+nocol
+	print red+"Program dumped!"+nocol
+	os.abort()
 except IOError :
 	print red+"ERROR:"+nocol+"File not found."
 except :
