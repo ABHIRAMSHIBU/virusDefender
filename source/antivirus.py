@@ -1,5 +1,4 @@
 #!/usr/bin/python2
-#NO T.I.M.E so breief commending
 #convert binary to hex
 import glob                # useless, for developer purpose
 import binascii            # u know it , hex - dec - ascii - bin
@@ -32,8 +31,7 @@ def split(a,b):                           # Split function, string -> list
 
 
 
-def binhex():
-	fvirus=open("databases","rb").readline()#open virus database sample
+def binhex(fvirus):
 	frand=open(raw_input("Enter the name of the file to compare :"),"rb").read()# open any file
 	fvirus=fvirus.split("\n")#remove newline
 	fvirus="".join(fvirus)
@@ -57,7 +55,6 @@ def filter(f1,f2):
 	x=len(f2)-index+2
 	f=f2[:x]
 	return f
-
 
 
 #import io
