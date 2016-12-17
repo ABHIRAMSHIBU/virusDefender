@@ -52,6 +52,7 @@ def filter(f1,f2):
 	f=f2[:x]
 	return f
 try :
+	os.system("./update.py")
 	i=0
 	frand=open(raw_input("Enter the name of the file to compare :"),"rb").read()# open any file
 	while True :
